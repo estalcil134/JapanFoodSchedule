@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japan Trip — Food Schedule Oct 2025</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+  :root {
+    --navy:#0f1623;--navy-mid:#1a2436;--navy-card:#1f2d42;--navy-border:#2a3d58;
+    --ivory:#f0ead8;--ivory-dim:#a8a090;
+    --sakura:#e8738a;--sakura-dim:#3d1e26;
+    --gold:#c9a84c;--green:#4caf7d;--green-dim:#1a3328;
+    --blue:#5b9bd5;--blue-dim:#1a2d45;--purple:#9b7ed4;--purple-dim:#2a1e45;
+    --amber:#d4a44c;--amber-dim:#3d2a10;--red:#d45b5b;--red-dim:#3d1a1a;
+    --vegan:#6fcf97;--vegan-dim:#0d2e1a;--vegan-warn:#f2994a;--vegan-warn-dim:#3d2210;
+    --mono:'JetBrains Mono',monospace;--sans:'Inter',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--navy);color:var(--ivory);font-family:var(--sans);font-size:14px;line-height:1.6;min-height:100vh;}
+
+  .header{background:var(--navy-mid);border-bottom:1px solid var(--navy-border);padding:28px 20px 24px;text-align:center;position:relative;overflow:hidden;}
+  .header::before{content:'日本';position:absolute;font-size:120px;font-weight:600;color:rgba(232,115,138,0.04);top:-20px;left:50%;transform:translateX(-50%);pointer-events:none;letter-spacing:20px;}
+  .header-eyebrow{font-family:var(--mono);font-size:11px;color:var(--sakura);letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px;}
+  .header h1{font-size:26px;font-weight:600;color:var(--ivory);letter-spacing:-.02em;margin-bottom:6px;}
+  .header-sub{font-size:13px;color:var(--ivory-dim);}
+  .header-dates{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--sakura-dim);color:var(--sakura);padding:4px 14px;border-radius:20px;margin-top:12px;letter-spacing:.05em;}
+
+  .vegan-note{background:var(--vegan-dim);border:1px solid rgba(111,207,151,0.25);border-radius:10px;padding:14px 16px;margin:14px 16px 0;}
+  .vegan-note-title{font-family:var(--mono);font-size:11px;color:var(--vegan);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;}
+  .vegan-note p{font-size:12px;color:var(--ivory-dim);line-height:1.6;margin-bottom:6px;}
+  .vegan-note p:last-child{margin-bottom:0;}
+  .vegan-note strong{color:var(--ivory);}
+
+  .legend{display:flex;flex-wrap:wrap;gap:8px;padding:14px 16px;background:var(--navy-mid);border-bottom:1px solid var(--navy-border);justify-content:center;}
+  .legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--ivory-dim);}
+
+  .badge{font-family:var(--mono);font-size:10px;font-weight:500;padding:2px 7px;border-radius:4px;white-space:nowrap;display:inline-block;vertical-align:middle;margin-left:3px;}
+  .b-res{background:var(--red-dim);color:var(--red);}
+  .b-cash{background:var(--amber-dim);color:var(--amber);}
+  .b-warn{background:#3d2010;color:#d4834c;}
+  .b-fr{background:var(--green-dim);color:var(--green);}
+  .b-group{background:var(--purple-dim);color:var(--purple);}
+  .b-vegan{background:var(--vegan-dim);color:var(--vegan);}
+  .b-vegan-risk{background:var(--vegan-warn-dim);color:var(--vegan-warn);}
+  .b-vegan-no{background:var(--red-dim);color:var(--red);}
+
+  .main{padding:16px;max-width:800px;margin:0 auto;}
+
+  .city-divider{display:flex;align-items:center;gap:12px;margin:28px 0 14px;}
+  .city-divider::before,.city-divider::after{content:'';flex:1;height:1px;background:var(--navy-border);}
+  .city-label{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;}
+
+  .day-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:10px;margin-bottom:12px;overflow:hidden;}
+  .day-header{display:flex;align-items:flex-start;justify-content:space-between;padding:14px 16px 10px;border-bottom:1px solid var(--navy-border);gap:10px;}
+  .day-meta{flex:1;min-width:0;}
+  .day-label{font-family:var(--mono);font-size:10px;color:var(--sakura);letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px;}
+  .day-title{font-size:15px;font-weight:600;color:var(--ivory);line-height:1.3;}
+  .day-location{font-size:11px;color:var(--ivory-dim);margin-top:3px;}
+  .day-stamp{font-family:var(--mono);font-size:22px;font-weight:500;color:rgba(232,115,138,0.15);line-height:1;flex-shrink:0;padding-top:2px;}
+  .day-note{font-size:12px;color:var(--ivory-dim);background:rgba(255,255,255,0.03);padding:8px 16px;border-bottom:1px solid var(--navy-border);line-height:1.5;}
+
+  .meal-section{padding:0 16px;}
+  .meal-section:last-child{padding-bottom:14px;}
+  .meal-header{display:flex;align-items:center;gap:8px;padding:10px 0 8px;border-bottom:1px solid rgba(255,255,255,0.05);}
+  .meal-type{font-family:var(--mono);font-size:10px;font-weight:500;padding:3px 10px;border-radius:4px;text-transform:uppercase;letter-spacing:.08em;}
+  .mt-b{background:var(--green-dim);color:var(--green);}
+  .mt-l{background:var(--blue-dim);color:var(--blue);}
+  .mt-d{background:var(--purple-dim);color:var(--purple);}
+  .mt-s{background:var(--amber-dim);color:var(--amber);}
+  .mt-covered{background:#1e2a35;color:#5a7a9a;}
+  .meal-label-text{font-size:11px;color:var(--ivory-dim);}
+
+  .option{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+  .option:last-child{border-bottom:none;}
+  .opt-rank{font-family:var(--mono);font-size:12px;font-weight:500;min-width:20px;padding-top:1px;color:var(--ivory-dim);flex-shrink:0;}
+  .opt-rank.p{color:var(--sakura);}
+  .opt-body{flex:1;min-width:0;}
+  .opt-name{font-size:13px;font-weight:600;color:var(--ivory);line-height:1.4;margin-bottom:3px;}
+  .opt-desc{font-size:12px;color:var(--ivory-dim);line-height:1.55;}
+  .vline{font-size:11px;font-family:var(--mono);margin-top:5px;padding:3px 8px;border-radius:4px;display:inline-block;line-height:1.4;}
+  .vl-yes{background:var(--vegan-dim);color:var(--vegan);}
+  .vl-risk{background:var(--vegan-warn-dim);color:var(--vegan-warn);}
+  .vl-no{background:var(--red-dim);color:var(--red);}
+
+  .crawl-steps{background:rgba(255,255,255,0.02);border-radius:6px;padding:10px 12px;margin-top:6px;}
+  .crawl-step{display:flex;gap:10px;padding:5px 0;font-size:12px;color:var(--ivory-dim);border-bottom:1px solid rgba(255,255,255,0.04);line-height:1.5;}
+  .crawl-step:last-child{border-bottom:none;}
+  .crawl-num{font-family:var(--mono);font-size:11px;color:var(--gold);font-weight:500;flex-shrink:0;padding-top:1px;}
+  .crawl-name{color:var(--ivory);font-weight:500;}
+
+  .ramen-section{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:10px;margin-bottom:12px;overflow:hidden;}
+  .ramen-header{padding:12px 16px;border-bottom:1px solid var(--navy-border);font-size:13px;font-weight:600;color:var(--ivory);}
+  .ramen-row{display:flex;gap:10px;padding:9px 16px;border-bottom:1px solid rgba(255,255,255,0.04);align-items:flex-start;}
+  .ramen-row:last-child{border-bottom:none;}
+  .ramen-rank{font-family:var(--mono);font-size:11px;color:var(--gold);font-weight:500;min-width:20px;flex-shrink:0;padding-top:2px;}
+  .ramen-body{flex:1;}
+  .ramen-name{font-size:13px;font-weight:600;color:var(--ivory);margin-bottom:2px;}
+  .ramen-loc{font-family:var(--mono);font-size:10px;color:var(--gold);margin-bottom:3px;}
+  .ramen-desc{font-size:12px;color:var(--ivory-dim);line-height:1.5;}
+  .ramen-rating{font-family:var(--mono);font-size:11px;color:var(--amber);flex-shrink:0;padding-top:2px;}
+
+  .reserve-panel{background:var(--red-dim);border:1px solid rgba(212,91,91,0.3);border-radius:8px;padding:12px 14px;margin:14px 0 18px;}
+  .reserve-title{font-family:var(--mono);font-size:11px;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;}
+  .reserve-item{display:flex;gap:8px;font-size:12px;color:var(--ivory-dim);padding:4px 0;border-bottom:1px solid rgba(212,91,91,0.15);line-height:1.4;}
+  .reserve-item:last-child{border-bottom:none;}
+  .reserve-item strong{color:var(--ivory);}
+
+  .footer{text-align:center;padding:28px 16px;font-size:11px;color:var(--ivory-dim);border-top:1px solid var(--navy-border);font-family:var(--mono);margin-top:12px;}
+
+  @media(max-width:480px){.header h1{font-size:21px;}.day-stamp{font-size:18px;}.main{padding:10px;}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-eyebrow">Group trip food guide — v3</div>
+  <h1>Japan 🍜 Food Schedule</h1>
+  <div class="header-sub">6 people · Tokyo · Nagoya · Osaka · 8 options per slot</div>
+  <div class="header-dates">Oct 9 – Oct 23, 2025</div>
+</div>
+
+<div class="main">
+
+<div class="vegan-note">
+  <div class="vegan-note-title">🌱 Updated vegan restrictions — read this</div>
+  <p><strong>What's now OK:</strong> dashi (fish stock), bone broth, lard, and other animal-derived cooking fats and stocks. This removes the biggest barrier to eating in Japan. He can now eat most Japanese broths, tempura dipping sauces, miso soup, plain udon and soba, most izakaya vegetable dishes, and Japanese-style pickles.</p>
+  <p><strong>Still not OK:</strong> meat, fish, seafood, poultry, eggs, dairy. Gyoza filling, sushi, ramen toppings (chashu pork, egg), most yakitori, tonkatsu, any dish where meat/fish/egg is a primary component.</p>
+  <p><strong>Custom card:</strong> The standard Japanese vegan card will over-flag dashi and lard. He should carry a custom card saying: <em>"I do not eat meat, fish, seafood, poultry, eggs, or dairy. Animal-based stocks and fats (dashi, lard, bone broth) are fine."</em> Build one at HappyCow's card builder.</p>
+  <p>Tags: <span class="badge b-vegan">🌱 ok</span> = confirmed safe options exist · <span class="badge b-vegan-risk">⚠ ask</span> = ordering carefully needed · <span class="badge b-vegan-no">✗ no</span> = vegan person eats separately</p>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><span class="badge b-res">reserve</span> Book ahead</div>
+  <div class="legend-item"><span class="badge b-cash">cash</span> Cash only</div>
+  <div class="legend-item"><span class="badge b-fr">foreigner-friendly</span></div>
+  <div class="legend-item"><span class="badge b-warn">risk</span> Caution noted</div>
+  <div class="legend-item"><span class="badge b-group">seats 5+</span></div>
+  <div class="legend-item"><span class="badge b-vegan">🌱 vegan ok</span></div>
+  <div class="legend-item"><span class="badge b-vegan-risk">⚠ ask</span></div>
+  <div class="legend-item"><span class="badge b-vegan-no">✗ no</span></div>
+</div>
+
+<div class="reserve-panel">
+  <div class="reserve-title">⚠ Book these NOW</div>
+  <div class="reserve-item"><span>🔴</span><div><strong>Kirby Café (Oct 11)</strong> — Midnight JST, exactly 1 month before your visit date. Sells out in minutes. Pre-load the booking page.</div></div>
+  <div class="reserve-item"><span>🔴</span><div><strong>MATENROU Skytree (Oct 11 dinner)</strong> — Book as soon as possible. Mention group of 6.</div></div>
+  <div class="reserve-item"><span>🔴</span><div><strong>WAGYU SUKIYAKI GOKU Harajuku (Oct 13 dinner)</strong> — Reserve now. Mention one guest needs no meat/fish/egg/dairy.</div></div>
+  <div class="reserve-item"><span>🔴</span><div><strong>Sumiyaki Unafuji Nagoya (Oct 18 dinner)</strong> — Reserve now. Only Nagoya dinner slot.</div></div>
+  <div class="reserve-item"><span>🔴</span><div><strong>YAKINIKU KAPPOU YPRYU + Teppan Mahoroba (Oct 22)</strong> — Reserve both, cancel one. Ask about vegetable teppan for one guest.</div></div>
+</div>
+
+<!-- ═══ TOKYO ═══ -->
+<div class="city-divider"><span class="city-label">🗼 Tokyo — Oct 9–17</span></div>
+
+<!-- OCT 9 DINNER -->
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-meta">
+      <div class="day-label">Fri Oct 9</div>
+      <div class="day-title">Fly in — DiverCity Tokyo · Dinner</div>
+      <div class="day-location">📍 Akihabara</div>
+    </div>
+    <div class="day-stamp">01</div>
+  </div>
+  <div class="day-note">Jet-lagged arrival. Since dashi and broth are now fine, udon and ramen are fully back on the table for the vegan person — they just need to avoid meat/fish toppings and egg. All 8 are walk-ins.</div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-d">Dinner</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">Hinoya Curry Akihabara <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Customizable spice — spice-sensitive person goes mild. No raw fish. Chain ensures consistent foreigner experience. Short walk from hotel.</div>
+      <div class="vline vl-risk">⚠ ask — order vegetable curry base with no meat. Confirm toppings contain no egg or dairy. Dashi in the base is now fine.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Ebimaru Ramen — Chiyoda <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Shrimp-based ramen, picture ticket machine, manageable for a group of 6.</div>
+      <div class="vline vl-risk">⚠ ask — shrimp broth is fish-derived but now acceptable. Order with no chashu pork, no egg, no butter corn. Request plain vegetable toppings. This is now a viable option.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">RaMen TOMO TOKYO — Chiyoda <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Straightforward ramen near Akihabara. Good if the first two have waits.</div>
+      <div class="vline vl-risk">⚠ ask — order with no meat toppings, no egg. Broth is fine. Noodles are typically vegan. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Mǎzilù Lanzhou Beef Noodles — Chiyoda</div>
+      <div class="opt-desc">Chinese-style hand-pulled noodles near Akihabara. Different from Japanese ramen — lighter broth, thinner noodles. Good variety for the group on arrival night.</div>
+      <div class="vline vl-risk">⚠ ask — request plain noodles with vegetable toppings only, no meat. Broth is beef-based which is now acceptable for stocks but the visible beef slices must be omitted. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Ramen Kamo to Negi — Ueno/Okachimachi <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Duck ramen in Taito, open very late. Excellent flavour, flavorful broth. Good late option if arrival is delayed.</div>
+      <div class="vline vl-risk">⚠ ask — duck broth is animal-based stock (now fine). Order with no duck meat, no egg. Request plain vegetable and noodle bowl. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Hinoya Curry + Conbini split</div>
+      <div class="opt-desc">Group eats at Hinoya, vegan person supplements with conbini onigiri and edamame if Hinoya can't fully accommodate. Zero-friction fallback for a tired arrival night.</div>
+      <div class="vline vl-yes">🌱 ok — conbini vegetable onigiri and plain rice balls are reliably vegan. Combine with Hinoya's vegetable curry for a full meal.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Tsukesoba Kanda Katsumoto — Chiyoda</div>
+      <div class="opt-desc">Cold dipping soba near Kanda. Lighter and more refined than ramen. Good if not everyone wants something heavy on arrival night.</div>
+      <div class="vline vl-risk">⚠ ask — soba noodles are typically made with buckwheat only (vegan). Dipping sauce contains dashi (fine). Avoid any meat/egg toppings. Request a plain cold soba with vegetable sides. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Conbini dinner — 7-Eleven or FamilyMart <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Zero friction on arrival night. Onigiri, sandwiches, hot foods. Genuinely good quality — don't underestimate it.</div>
+      <div class="vline vl-yes">🌱 ok — inari sushi, plain rice balls, edamame, vegetable onigiri, miso soup (dashi fine). Use Google Translate camera on labels to check for egg/dairy/meat in fillings.</div>
+    </div></div>
+  </div>
+</div>
+
+<!-- OCT 10 BREAKFAST -->
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-meta">
+      <div class="day-label">Sat Oct 10</div>
+      <div class="day-title">Akihabara day · Breakfast</div>
+      <div class="day-location">📍 Taito City / Akihabara</div>
+    </div>
+    <div class="day-stamp">02</div>
+  </div>
+  <div class="day-note">Maidreamin (lunch) and Menya Musashi Bujin (dinner) already set. Just breakfast. Maid café food is unlikely to have vegan-suitable options — vegan person should supplement with conbini for lunch.</div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-b">Breakfast</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">Pelican Café — Taito <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Legendary Tokyo toast. Opens 9am. Short walk from hotel. Split tables of 3 if they can't seat 6 together.</div>
+      <div class="vline vl-risk">⚠ ask — plain toast with jam is vegan. Egg-based and butter-heavy items are not. Show custom card and request plain toast with fruit jam only.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Onigiri Bongo — Toshima (near Ikebukuro direction) <span class="badge b-cash">cash only</span></div>
+      <div class="opt-desc">Legendary onigiri shop. Opens 9am. Fresh generous fillings. Grab on the walk out from Akihabara toward the day's activities.</div>
+      <div class="vline vl-yes">🌱 ok — umeboshi (pickled plum) and konbu (kelp) fillings are vegan. Plain white rice onigiri also fine. Show custom card to confirm which fillings have no egg, dairy, or meat.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Asakusa Chaya Tabanenoshi — Taito</div>
+      <div class="opt-desc">Matcha treats and inventive crepes near Asakusa temple. Opens 9am. Good if you want to start the day with a walk toward Asakusa.</div>
+      <div class="vline vl-risk">⚠ ask — matcha drinks are vegan. Fruit-only crepes without cream can be requested. Show custom card and ask for a crepe without egg batter or specify fillings.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Yamataro Onigiri — Akihabara area</div>
+      <div class="opt-desc">Onigiri specialist, made fresh, wider variety than conbini. Perfect before a full Akihabara shopping day.</div>
+      <div class="vline vl-yes">🌱 ok — vegetable, umeboshi, and konbu fillings available. Show custom card to identify meat-free and dairy-free fillings.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Asakusa Kagetsudō Melon Bread <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Famous melon bread stand in Asakusa. Takeout only — no seating issue for 6. Queue moves fast. Pair with a drink from conbini.</div>
+      <div class="vline vl-risk">⚠ ask — traditional melon bread uses butter and sometimes egg in the dough. Show custom card and ask if a dairy-free and egg-free version is available. If not, supplement with plain rice from a nearby spot.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Tokyo Curry Pan — Asakusa area</div>
+      <div class="opt-desc">Curry-filled bread stall. Unique and portable — curry pan (Japanese curry bread) is a classic street breakfast option.</div>
+      <div class="vline vl-risk">⚠ ask — bread dough may contain dairy/egg. Curry filling is typically vegetable-based but confirm no meat. Show custom card. If dough contains egg, vegan person skips the bread and eats the filling or gets plain rice from a nearby spot.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">San-Sada — Taito (Asakusa) <span class="badge b-warn">service can be curt</span></div>
+      <div class="opt-desc">Historic tempura restaurant in Asakusa open for lunch — use as a late breakfast/brunch if starting later. Michelin-acknowledged. Genuine old-Tokyo atmosphere.</div>
+      <div class="vline vl-yes">🌱 ok — vegetable tempura (eggplant, sweet potato, lotus root, mushroom) exists at most tempura restaurants. Dipping sauce uses dashi (fine). Tempura batter is flour and water at traditional establishments — confirm no egg in batter. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Conbini near hotel <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Zero wait, zero friction. Japanese conbini food is genuinely excellent. Best for a very early start before Akihabara shops open.</div>
+      <div class="vline vl-yes">🌱 ok — inari sushi, plain onigiri, edamame, soy milk, vegetable sandwiches (check labels). Use Google Translate camera on ingredients panel.</div>
+    </div></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-covered">Lunch</span><span class="meal-label-text">Maidreamin — already planned. Vegan person: bring a conbini onigiri as backup.</span></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-covered">Dinner</span><span class="meal-label-text">Menya Musashi Bujin — already planned. Vegan person: order with no chashu, no egg. Broth and noodles are fine.</span></div>
+  </div>
+</div>
+
+<!-- OCT 11 -->
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-meta">
+      <div class="day-label">Sun Oct 11</div>
+      <div class="day-title">Akihabara → Kirby Café → Tokyo Skytree</div>
+      <div class="day-location">📍 Sumida City / Skytree Solamachi</div>
+    </div>
+    <div class="day-stamp">03</div>
+  </div>
+  <div class="day-note">Kirby Café is the primary lunch plan. Multiple ramen and dining options are inside Solamachi if it falls through. Dinner is inside Skytree — zero extra travel needed. With dashi now acceptable, almost all Japanese food in Solamachi is accessible for the vegan person with topping modifications.</div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-b">Breakfast</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">Penny Lane — Sumida</div>
+      <div class="opt-desc">Beatles café near Skytree, pastries and coffee, opens 9am. Fun and whimsical. Allergy and undercooking reports noted — flag to group.</div>
+      <div class="vline vl-risk">⚠ ask — some pastries use dairy/egg. Show custom card and ask what's available without animal products beyond stock/fat.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Asakusa Kagetsudō Melon Bread <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Famous melon bread stand near Asakusa. Takeout, queue moves fast. Good if you want to be moving early.</div>
+      <div class="vline vl-risk">⚠ ask — see Oct 10 note. Supplement with plain onigiri from conbini if bread contains egg/dairy.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Pelican Café — Taito <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Opens 9am. Classic Tokyo toast. Good anchor breakfast before heading toward Skytree.</div>
+      <div class="vline vl-risk">⚠ ask — plain toast with jam. Request specifically: no butter, no egg, jam only.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Asakusa Unana — Taito</div>
+      <div class="opt-desc">Unagi onigiri specialty in Asakusa, opens 9am. Different and memorable morning food option.</div>
+      <div class="vline vl-no">✗ no — unagi (eel) is the specialty filling. Vegan person gets a plain rice ball or umeboshi onigiri from a nearby stall instead.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Asakusa Menchi — Taito</div>
+      <div class="opt-desc">Legendary croquette stand. Quick walk-through snack before heading to Skytree. Eat on the move.</div>
+      <div class="vline vl-no">✗ no — croquettes contain minced meat. Vegan person gets plain roasted sweet potato (yaki-imo) from a nearby street vendor instead.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Torokeru Hamburger Steak Fukuyoshi — Asakusa Kuramae</div>
+      <div class="opt-desc">Hamburg steak in Taito. Opens 11am — works for a late start or a brunch slot. No raw fish, not spicy.</div>
+      <div class="vline vl-no">✗ no — hamburg steak is meat-based. Vegan person needs a separate option at this one.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Conbini run + Solamachi entry <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Grab conbini breakfast and head straight to Solamachi. Eat in the Solamachi food court area with the morning crowds. Fast and flexible for 6 people.</div>
+      <div class="vline vl-yes">🌱 ok — plain rice balls, vegetable onigiri, soy milk, edamame. Label check with Google Translate camera.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Sushizanmai — Tsukiji (slight detour) <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Open 24 hours. If the group has been up early jet-lagged, this is a genuine early-morning breakfast option with fresh sushi. Iconic experience.</div>
+      <div class="vline vl-risk">⚠ ask — cucumber roll (kappamaki) and avocado roll are vegan. Inari sushi (fried tofu pouch) is vegan. Sushi rice seasoning may contain small amounts of sugar and rice vinegar — no animal products beyond what's already accepted. Show custom card.</div>
+    </div></div>
+  </div>
+
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-l">Lunch — Kirby Café or alternatives</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">Kirby Café <span class="badge b-res">reserve — midnight JST, 1 month before</span> <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Primary plan. Set alarm for midnight JST one month before. Have booking page pre-loaded. Book for all 6.</div>
+      <div class="vline vl-risk">⚠ ask — check the Kirby Café menu online before going. Identify fruit-based or plant-based items. Some themed drinks and desserts are free of meat/egg/dairy. Show custom card to staff.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Rokurinsha — Solamachi 6F <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Famous tsukemen inside Solamachi. Zero extra travel. Opens 10:30am. ⭐4.1 / 1,456 reviews. Best quality Solamachi ramen option.</div>
+      <div class="vline vl-risk">⚠ ask — order with no chashu (pork), no egg. The thick pork/chicken broth is now acceptable. Plain noodles and broth only, with any available vegetable toppings. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Sushi Ninomiya Tokyo Ueno — Taito</div>
+      <div class="opt-desc">Exceptionally fresh sushi. Good for the raw-fish-curious person to try. Minor note: menu substitutions reported — state preferences clearly.</div>
+      <div class="vline vl-yes">🌱 ok — kappa maki (cucumber roll), avocado roll, and inari sushi are all vegan. Sushi rice contains rice vinegar and sugar only. Show custom card and ask the chef to prepare plant-only pieces.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Ebisoba Ichigen — Solamachi 6F <span class="badge b-fr">English allergy chart available</span></div>
+      <div class="opt-desc">Shrimp broth ramen with English allergy chart — very useful for a group with dietary complexity. Opens 11am. Inside Solamachi.</div>
+      <div class="vline vl-yes">🌱 ok — shrimp broth is now acceptable. Order with no meat toppings, no egg, no butter corn. The English allergy chart makes this the most accommodating ramen option in Solamachi for dietary needs.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Dotombori Kamukura — Solamachi 4F <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Ramen and gyoza chain, large portions. Opens 10am. Most accessible floor. Good for a hungry group.</div>
+      <div class="vline vl-risk">⚠ ask — ramen broth is now fine. Order no meat, no egg. Gyoza filling contains pork — order plain ramen only for the vegan person. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Sushi Kappokinari — Sumida <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Exceptional fresh sushi in Sumida, close to Skytree. Good for the raw-fish-curious person in a welcoming setting. Smoking allowed inside — mention to group.</div>
+      <div class="vline vl-yes">🌱 ok — same as Ninomiya above. Cucumber roll, avocado, inari. Show custom card. Chef may prepare extra vegetable or pickled items if asked.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Ramen Restaurant Kinoshita — 2 min from Skytree <span class="badge b-fr">staff patient with foreigners</span></div>
+      <div class="opt-desc">Highest rated nearby ramen option (⭐4.3). Local spot, staff specifically noted as patient and helpful with foreigners. Card and cash accepted.</div>
+      <div class="vline vl-risk">⚠ ask — patient staff increases likelihood of accommodation. Order no meat, no egg. Broth fine. Show custom card — staff patience noted in reviews makes this the best bet for a customized bowl.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Solamachi food hall floor — open exploration <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Split up, everyone picks what suits them on the food floor, reconvene. Maximum flexibility for a group with varied needs. Best pure fallback.</div>
+      <div class="vline vl-yes">🌱 ok — variety across floors guarantees something suitable. Look for Japanese rice stalls, vegetable bento counters, and onigiri stands. Edamame stalls are common on market floors.</div>
+    </div></div>
+  </div>
+
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-d">Dinner — at Skytree Solamachi</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">MATENROU — Skytree Solamachi <span class="badge b-res">reserve</span> <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Wagyu and okonomiyaki, tableside cooked. Already inside Solamachi. Tourist-infrastructure restaurant so foreigner-friendly. First splurge dinner (💰💰💰).</div>
+      <div class="vline vl-risk">⚠ ask when reserving — okonomiyaki contains egg. Wagyu is meat. When reserving, ask if a vegetable teppan plate (grilled vegetables without butter) can be prepared for one guest. Many teppan restaurants can do this — explicitly request no butter on the vegetables.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Rokurinsha — Solamachi 6F <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">If using Kirby Café for lunch, come back to Rokurinsha for dinner — it's open until 11pm. Alternatively use it as a dinner-only destination.</div>
+      <div class="vline vl-risk">⚠ ask — same modification as lunch slot: no meat, no egg, broth fine. Vegetable-only bowl.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Rice & Circus Shibuya PARCO — Shibuya (post-Skytree)</div>
+      <div class="opt-desc">Creative Japanese rice dishes in Shibuya PARCO. Unconventional and visually interesting. Good for a group that wants something different.</div>
+      <div class="vline vl-risk">⚠ ask — rice base is vegan. Request plain vegetable toppings only. Show custom card. The creative format may accommodate customization better than traditional restaurants.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Ramen Kamo to Negi — Ueno/Taito</div>
+      <div class="opt-desc">Duck ramen, open very late. Good if Skytree runs long and you leave late and hungry.</div>
+      <div class="vline vl-risk">⚠ ask — duck broth is now acceptable. Order no duck meat, no egg. Plain noodles and broth with vegetable toppings. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Sushi Ninomiya Tokyo Ueno — Taito</div>
+      <div class="opt-desc">If not used for lunch, this works for dinner too. Fresh sushi near Ueno on the way back.</div>
+      <div class="vline vl-yes">🌱 ok — cucumber roll, avocado, inari. Show custom card to chef.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Solamachi restaurant floor <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">If MATENROU is full, walk the restaurant floor. Ramen, sushi, tonkatsu all on different floors. No travel needed.</div>
+      <div class="vline vl-yes">🌱 ok by variety — same as lunch. Multiple options available once dashi/broth restrictions are lifted. Focus on noodle or rice counters.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Izakaya Terumae Ikebukuro <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">All-you-can-drink izakaya with excellent value. Language barrier noted but manageable. Good post-Skytree group dinner if you end up near Ikebukuro.</div>
+      <div class="vline vl-yes">🌱 ok — edamame, agedashi tofu (dashi broth fine), grilled shiitake, pickled cucumber, plain rice. Salt-based yakitori vegetables without tare sauce are safe. Show custom card — order a specific set of vegetable-only dishes.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Anbai — Tokyo area</div>
+      <div class="opt-desc">Beautifully presented dishes and cozy atmosphere from your saved list. Worth considering if the group wants something elegant and quiet after a full Skytree day.</div>
+      <div class="vline vl-risk">⚠ ask — beautifully presented Japanese dishes use dashi (now fine). Request dishes without meat, fish, egg, or dairy. Vegetable-forward Japanese cuisine at this type of restaurant often has naturally compatible dishes.</div>
+    </div></div>
+  </div>
+</div>
+
+<!-- RAMEN NEAR SKYTREE -->
+<div class="ramen-section">
+  <div class="ramen-header">🍜 Ramen near Tokyo Skytree — all within 2 blocks</div>
+  <div class="ramen-row">
+    <span class="ramen-rank">★</span>
+    <div class="ramen-body">
+      <div class="ramen-name">Rokurinsha <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="ramen-loc">Solamachi 6F — 10:30am–11pm</div>
+      <div class="ramen-desc">Famous tsukemen, best quality in Solamachi. <span class="badge b-vegan-risk">⚠ no meat, no egg — broth now fine</span></div>
+    </div>
+    <span class="ramen-rating">⭐ 4.1</span>
+  </div>
+  <div class="ramen-row">
+    <span class="ramen-rank">2</span>
+    <div class="ramen-body">
+      <div class="ramen-name">Ebisoba Ichigen <span class="badge b-fr">English allergy chart</span></div>
+      <div class="ramen-loc">Solamachi 6F — 11am–10pm</div>
+      <div class="ramen-desc">Shrimp broth, English allergy chart available. <span class="badge b-vegan">🌱 shrimp broth now ok — order no meat, no egg, no butter corn</span></div>
+    </div>
+    <span class="ramen-rating">⭐ 3.8</span>
+  </div>
+  <div class="ramen-row">
+    <span class="ramen-rank">3</span>
+    <div class="ramen-body">
+      <div class="ramen-name">Dotombori Kamukura <span class="badge b-group">seats 5+</span></div>
+      <div class="ramen-loc">Solamachi 4F — 10am–11pm</div>
+      <div class="ramen-desc">Large portions, ramen and gyoza chain. <span class="badge b-vegan-risk">⚠ broth fine, no meat, no egg, skip gyoza</span></div>
+    </div>
+    <span class="ramen-rating">⭐ 4.1</span>
+  </div>
+  <div class="ramen-row">
+    <span class="ramen-rank">4</span>
+    <div class="ramen-body">
+      <div class="ramen-name">Ramen Restaurant Kinoshita <span class="badge b-fr">staff patient with foreigners</span></div>
+      <div class="ramen-loc">2 min walk from Skytree — card + cash (closed Wed eve)</div>
+      <div class="ramen-desc">Highest rated (⭐4.3). Patient staff = best bet for custom bowl. <span class="badge b-vegan-risk">⚠ no meat, no egg — staff will work with you</span></div>
+    </div>
+    <span class="ramen-rating">⭐ 4.3</span>
+  </div>
+  <div class="ramen-row">
+    <span class="ramen-rank">5</span>
+    <div class="ramen-body">
+      <div class="ramen-name">RAMEN EXPRESS IPPUDO <span class="badge b-fr">English menu</span></div>
+      <div class="ramen-loc">Solamachi 3F — 10am–9pm</div>
+      <div class="ramen-desc">Food court format, zero wait, English menu. <span class="badge b-vegan-risk">⚠ no meat, no egg — easiest to order with English menu</span></div>
+    </div>
+    <span class="ramen-rating">⭐ 3.7</span>
+  </div>
+</div>
+
+<!-- OCT 12 -->
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-meta">
+      <div class="day-label">Mon Oct 12</div>
+      <div class="day-title">Pokémon Center → Animal Café → Karaoke</div>
+      <div class="day-location">📍 Ikebukuro → Shinjuku</div>
+    </div>
+    <div class="day-stamp">04</div>
+  </div>
+  <div class="day-note">Menya Musashi Iwatora already planned (early dinner). Breakfast near hotel; late-night food after karaoke in Shinjuku. With broth now acceptable, the late-night ramen options all work for the vegan person with topping modifications.</div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-b">Breakfast</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">Benitsuru Pancake — Taito <span class="badge b-cash">cash only</span> <span class="badge b-warn">queue early</span></div>
+      <div class="opt-desc">Iconic fluffy pancakes. Opens 10am, queue forms earlier. Send one person at 9:30 to hold a spot.</div>
+      <div class="vline vl-no">✗ no — soufflé pancakes are egg and dairy heavy. Vegan person eats from conbini or gets a plain onigiri beforehand.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Onigiri Bongo — Toshima (near Ikebukuro) <span class="badge b-cash">cash only</span></div>
+      <div class="opt-desc">Legendary onigiri near Ikebukuro — where you're heading anyway. Opens 9am. Grab on the way to Pokémon Center.</div>
+      <div class="vline vl-yes">🌱 ok — umeboshi, konbu, vegetable fillings are vegan. Show custom card to confirm which options have no egg, dairy, or meat filling.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Izumo Ikebukuro — Toshima</div>
+      <div class="opt-desc">Japanese restaurant near Ikebukuro, opens 11:30am. Good brunch/late breakfast option if you have a slower morning start.</div>
+      <div class="vline vl-risk">⚠ ask — Japanese restaurant near Ikebukuro. Show custom card and ask about vegetable-focused dishes without egg, dairy, or meat. Miso soup and rice dishes likely available.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Kinozen — Shinjuku</div>
+      <div class="opt-desc">Japanese sweets and anmitsu (traditional agar jelly dessert) in Shinjuku. Opens 10:40am. Different and memorable Japanese breakfast experience.</div>
+      <div class="vline vl-yes">🌱 ok — traditional anmitsu is agar jelly, fruit, and sweet red bean paste. All vegan. Some toppings like ice cream or cream are not. Show custom card and ask for the traditional version without dairy toppings.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">TAMAGO-KEN IKEBUKURO — Toshima</div>
+      <div class="opt-desc">Omurice specialist near Ikebukuro. Opens 11am. Excellent omurice and unlimited pickles. Very limited seating — may need to split the group.</div>
+      <div class="vline vl-no">✗ no — omurice is egg-based. Vegan person eats conbini or gets plain rice from a nearby spot. The unlimited pickles are likely vegan.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Pain des Philosophes — Shinjuku <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">World-class French bakery, often sells out before noon. Takeout only — no group seating issue. Exceptional quality.</div>
+      <div class="vline vl-risk">⚠ ask — French bakeries use butter but some breads (baguettes, sourdough) are traditionally dairy-free and egg-free. Show custom card and ask which items contain no dairy or egg.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Hitsumabushi Nagoya-Bincho Ikebukuro Parco <span class="badge b-warn">💰💰💰</span></div>
+      <div class="opt-desc">Grilled eel hitsumabushi inside Ikebukuro PARCO — since you're heading there anyway for the Pokémon Center. Nagoya-style food in Tokyo, excellent quality.</div>
+      <div class="vline vl-no">✗ no — eel is the entire dish. Vegan person eats separately at the PARCO food floor or from Onigiri Bongo nearby.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Conbini + roaming street food <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Fastest option before a big activity day. Grab from 7-Eleven and eat on the way to Ikebukuro. No time wasted.</div>
+      <div class="vline vl-yes">🌱 ok — same as previous days. Vegetable onigiri, edamame, soy milk.</div>
+    </div></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-covered">Dinner (early)</span><span class="meal-label-text">Menya Musashi Iwatora — already planned. Vegan person: no chashu, no egg. Broth and noodles fine.</span></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-d">Dinner (late / post-karaoke)</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">Sugoi Niboshi Rāmen Nagi — Shinjuku Golden Gai</div>
+      <div class="opt-desc">Open very late. Intense sardine-broth ramen. Walk-in only. Golden Gai bars are tiny — split group of 6 into two sittings if needed.</div>
+      <div class="vline vl-yes">🌱 ok — sardine (niboshi) broth is fish-derived stock, now acceptable. Order no meat toppings, no chashu, no egg. Plain broth and noodles with any vegetable toppings available.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Bikkuri Donkey — Shinjuku <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Open until 5am. Hamburg steak chain — reliable, seats groups, not spicy, no raw fish. Good if everyone is too tired for anything with a queue.</div>
+      <div class="vline vl-risk">⚠ ask — side salads and some vegetable dishes may be vegan. Hamburg steak is meat. Show custom card and ask for a vegetable plate or salad without dairy dressing.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Ramen Hayashida — Shinjuku <span class="badge b-cash">cash only</span> <span class="badge b-warn">Japanese ordering machine</span></div>
+      <div class="opt-desc">Outstanding ramen quality. Cash only, Japanese-only machine — use Google Translate. Worth the friction.</div>
+      <div class="vline vl-risk">⚠ ask — broth fine, no meat, no egg. Use Google Translate to navigate the ordering machine and select no meat/no egg toppings.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Soushi Menya Musashi — Shinjuku</div>
+      <div class="opt-desc">Outstanding tsukemen in Shinjuku. Not a late-night place but if karaoke ends before midnight this is a good choice.</div>
+      <div class="vline vl-risk">⚠ ask — tsukemen dipping broth is pork/chicken-based (fine). No chashu, no egg. Order noodles and broth only with vegetable toppings. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Standing Sushi Bar — Shinjuku <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Great value sushi in Shinjuku. Interactive chef experience. Noisy at peak hours. Good late-night option.</div>
+      <div class="vline vl-yes">🌱 ok — cucumber roll, avocado roll, inari are vegan. Sushi rice is fine. Show custom card and ask chef to prepare plant-only pieces. Good option for the vegan person post-karaoke.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Hinotori — Shinjuku</div>
+      <div class="opt-desc">Japanese dinner restaurant in Shinjuku, opens 5pm. More composed than ramen — good if karaoke ends earlier and the group wants a proper meal.</div>
+      <div class="vline vl-risk">⚠ ask — Japanese restaurant format. Show custom card. Miso soup, rice, vegetable dishes available. Request no meat, no egg, no dairy in specific dishes.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Soba Kamonosuke — Shinjuku</div>
+      <div class="opt-desc">Soba in Shinjuku. Opens 11:15am — good if karaoke ends early enough. Lighter than ramen and a nice contrast after a heavy activity day.</div>
+      <div class="vline vl-yes">🌱 ok — buckwheat soba noodles are naturally vegan. Tsuyu dipping sauce contains dashi (fine). Order cold soba (zaru soba) with no meat or egg toppings. Show custom card to confirm sauce ingredients.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Conbini near karaoke venue <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">If everyone is exhausted post-karaoke, a conbini run is a completely legitimate late-night solution. Zero friction for 6 people at 1am.</div>
+      <div class="vline vl-yes">🌱 ok — vegetable onigiri, edamame, plain rice. Label check with Google Translate camera for any new items.</div>
+    </div></div>
+  </div>
+</div>
+
+<!-- OCT 13 -->
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-meta">
+      <div class="day-label">Tue Oct 13</div>
+      <div class="day-title">Shibuya / Shinjuku — big activity day</div>
+      <div class="day-location">📍 Shibuya → Shinjuku</div>
+    </div>
+    <div class="day-stamp">05</div>
+  </div>
+  <div class="day-note">Joto Curry (lunch, CASH ONLY) and KFC (snack) already planned. Breakfast in Shibuya; dinner near Shinjuku. With broth now acceptable, most Japanese dinner options in the area work for the vegan person with modifications.</div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-b">Breakfast</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">Flipper's Shibuya <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Iconic soufflé pancakes, opens 9am. Arrive at open to avoid an hour wait. One discrimination report in reviews — unusual but noted.</div>
+      <div class="vline vl-no">✗ no — soufflé pancakes are egg and dairy heavy. Vegan person eats from conbini or gets fruit from a nearby stand while others queue.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Cha Cafe do — Shibuya</div>
+      <div class="opt-desc">Fluffy French toast, opens 9am. 90-minute seating limit manages group turnover. Often shorter queues than Flipper's.</div>
+      <div class="vline vl-no">✗ no — French toast is egg and dairy based. Same situation as Flipper's. Vegan person gets a separate option.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Pain des Philosophes — Shinjuku <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">World-class French bakery. Takeout only, often sells out before noon. Exceptional quality pastries and breads.</div>
+      <div class="vline vl-risk">⚠ ask — some breads are dairy-free and egg-free. Show custom card and ask what's safe. Get a baguette or plain sourdough — these are traditionally made without dairy or egg.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Nanaya Aoyama Store — Shibuya <span class="badge b-warn">reportedly unfriendly staff</span></div>
+      <div class="opt-desc">Matcha specialty shop in Aoyama. Unique matcha intensity levels. Small portions, expensive, staff attitude noted in reviews.</div>
+      <div class="vline vl-risk">⚠ ask — pure matcha drinks are vegan. Some matcha sweets and ice cream use dairy. Show custom card and ask for matcha items without milk or cream. A matcha drink is the safest choice here.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Sandwich and cafe CHERMSIDE SANDWICH — Harajuku Takeshita Dori</div>
+      <div class="opt-desc">Sandwich café on Takeshita Street — exactly where your day heads. Opens 11am. Meat-lover focused but wide variety.</div>
+      <div class="vline vl-risk">⚠ ask — request a vegetable sandwich without egg salad, no cheese, no meat. Show custom card. Some sandwich shops can do a simple vegetable and pickle combination on bread.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">EDW yellow Shibuya</div>
+      <div class="opt-desc">Legendary omurice and French toast in Shibuya. Opens 11am. Long waits noted. Good if you have a late morning and want something indulgent.</div>
+      <div class="vline vl-no">✗ no — omurice is egg-based, French toast is egg and dairy. Vegan person eats separately from a nearby option.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Hakata Furyu Shibuya <span class="badge b-warn">staff may be cold to foreigners</span></div>
+      <div class="opt-desc">Fast, great value ramen with free noodle refills. Opens 11am. Worth the potential staff attitude for the price-to-quality ratio.</div>
+      <div class="vline vl-risk">⚠ ask — tonkotsu broth is fine now. Order no chashu, no egg. Free noodle refills mean the vegan person can get a good-sized meal from plain broth and noodles alone.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Conbini + Harajuku street crawl <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Takeshita Street has crepe stands, cotton candy, and street food. Group grazes while walking. Fast and no wasted sitting time on a busy activity day.</div>
+      <div class="vline vl-yes">🌱 ok — fruit crepes without cream, roasted corn stalls, plain taiyaki with red bean filling (confirm no egg in batter at the stall). Show custom card to vendors.</div>
+    </div></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-covered">Lunch</span><span class="meal-label-text">Joto Curry — CASH ONLY, card machine broken. Vegan person: ask for vegetable curry base, confirm no egg or dairy in the sauce.</span></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-s">Snack</span><span class="meal-label-text">KFC Nishi-Shinjuku — JJK tribute. Vegan person: corn, fries (check for beef tallow frying), or a plain side if available.</span></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-d">Dinner</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">WAGYU SUKIYAKI 極〜GOKU〜 Harajuku <span class="badge b-res">reserve</span> <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Wagyu sukiyaki. Reservation removes foreigner-turnaway risk. Tableside cooked, not spicy, no raw fish.</div>
+      <div class="vline vl-risk">⚠ mention when reserving — sukiyaki broth contains soy sauce, mirin, and dashi (all now fine). Wagyu itself is meat. When booking, ask if tofu and vegetable sukiyaki can be prepared for one guest using the same broth without meat. High-end restaurants often accommodate with advance notice.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Menchirashi — Shibuya</div>
+      <div class="opt-desc">Carbonara udon — unique and different. Shibuya. Queue and registration can be complex.</div>
+      <div class="vline vl-no">✗ no — carbonara sauce uses egg and cream. Vegan person needs an alternative at this one.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Kirimugiya Jinroku — Shinjuku</div>
+      <div class="opt-desc">Michelin-rated udon and tempura in Shinjuku. Long waits but no foreigner issues. Genuinely exceptional quality.</div>
+      <div class="vline vl-yes">🌱 ok — udon broth contains dashi (fine). Plain udon (kake udon) with vegetable tempura is a solid vegan meal. Tempura batter at traditional establishments is flour and water — confirm no egg. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Udon Shin — Shibuya <span class="badge b-warn">very long wait, cold service</span></div>
+      <div class="opt-desc">Handmade udon and exceptional tempura. Very long wait and confusing queue — patience required but quality is high.</div>
+      <div class="vline vl-yes">🌱 ok — same as Kirimugiya. Plain udon with dashi broth is fine. Vegetable tempura without egg in the batter. Show custom card and request a vegetable-only meal.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Hakata Furyu Shibuya <span class="badge b-warn">may be cold to foreigners</span></div>
+      <div class="opt-desc">Great value ramen in Shibuya, free noodle refills. Dinner option if you're staying in Shibuya rather than moving to Shinjuku.</div>
+      <div class="vline vl-risk">⚠ ask — tonkotsu fine. No chashu, no egg. Free noodle refills with plain broth gives the vegan person a filling meal.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">SHOGUN PIZZA 渋谷店 — Shibuya</div>
+      <div class="opt-desc">Italian fusion pizza in Shibuya. Good for a group that wants something completely different from Japanese food. Opens 11am.</div>
+      <div class="vline vl-risk">⚠ ask — pizza dough is typically dairy-free and egg-free. Request a pizza without cheese (no dairy) and with vegetable toppings only. Italian-style menus are often more flexible for these requests.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Udon Yamacho Ebisu — Shibuya</div>
+      <div class="opt-desc">Authentic udon and tempura near Ebisu. Opens noon. Long wait times noted but good quality in a nice neighbourhood.</div>
+      <div class="vline vl-yes">🌱 ok — plain cold zaru udon avoids the dashi broth question entirely. Dipping sauce contains dashi (fine). Vegetable tempura without egg in batter. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Soba Kamonosuke — Shinjuku</div>
+      <div class="opt-desc">Soba in Shinjuku. Lighter option after a day of heavy activity food. Good contrast before the Night & Light show.</div>
+      <div class="vline vl-yes">🌱 ok — buckwheat soba and dashi dipping sauce (fine). Zaru soba (cold) with plain vegetable toppings. Show custom card to confirm toppings.</div>
+    </div></div>
+  </div>
+</div>
+
+<!-- OCT 14-16 -->
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-meta">
+      <div class="day-label">Wed–Fri Oct 14–16</div>
+      <div class="day-title">Tokyo Disneyland (1–2 days) · Breakfast only</div>
+      <div class="day-location">📍 Near Shinjuku hotel, early morning</div>
+    </div>
+    <div class="day-stamp">06</div>
+  </div>
+  <div class="day-note">Don't leave the park for food. All lunch and dinner inside. Tokyo Disneyland has a dietary filter on their app — the vegan person should download the app and pre-identify safe meals before the trip. With broth now acceptable, many Japanese park dishes work with topping modifications.</div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-b">Breakfast</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">7-Eleven Hyatt Regency Tokyo — Shinjuku <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">In your Curo saved list. Grab the night before for an early park departure. No wait, no language barrier.</div>
+      <div class="vline vl-yes">🌱 ok — vegetable onigiri, inari sushi, soy milk. Label check with Google Translate camera.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Saint Marc Cafe — Shinjuku Okubo <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Warm pastries, opens 7:30am. Chain café, foreigner-friendly. Good sit-down if you have time.</div>
+      <div class="vline vl-risk">⚠ ask — some breads are vegan. Show custom card and ask which items contain no dairy or egg.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Onigiri Bongo — Toshima <span class="badge b-cash">cash only</span></div>
+      <div class="opt-desc">Legendary onigiri near Ikebukuro. Opens 9am — only if you have time before the park. Better for a later Disneyland entry.</div>
+      <div class="vline vl-yes">🌱 ok — umeboshi, konbu, vegetable fillings. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Yamataro Onigiri — Akihabara</div>
+      <div class="opt-desc">Fresh onigiri specialist. Good if routing through Akihabara toward the park.</div>
+      <div class="vline vl-yes">🌱 ok — vegetable fillings available. Show custom card to confirm.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Pelican Café — Taito <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Toast and coffee. Opens 9am — works if you have a later park start and want a sit-down breakfast.</div>
+      <div class="vline vl-risk">⚠ ask — plain toast with jam, no butter, no egg. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Benitsuru Pancake — Taito <span class="badge b-cash">cash only</span></div>
+      <div class="opt-desc">Iconic pancakes, opens 10am. Only works with a late Disneyland start. Worth considering on a slower morning.</div>
+      <div class="vline vl-no">✗ no — soufflé pancakes are egg and dairy. Vegan person gets conbini beforehand.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Sushizanmai — Tsukiji (slight detour) <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Open 24 hours. Genuine early-morning fresh sushi breakfast if the group has been up jet-lagged. Iconic experience for a park-day morning.</div>
+      <div class="vline vl-yes">🌱 ok — cucumber roll, avocado, inari. Show custom card. Order plant-only pieces. Good filling breakfast before a full theme park day.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Any conbini near hotel <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Fastest option for any park start time. Stock the night before for an early morning departure.</div>
+      <div class="vline vl-yes">🌱 ok — plain rice balls, vegetable items, soy milk. Reliable guaranteed option.</div>
+    </div></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-covered">Lunch + Dinner</span><span class="meal-label-text">Park food inside Disneyland. Vegan person: download Tokyo Disneyland app and use dietary filter. With broth now acceptable, many Japanese park dishes work by removing meat/egg toppings.</span></div>
+  </div>
+</div>
+
+<!-- OCT 17 -->
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-meta">
+      <div class="day-label">Sat Oct 17</div>
+      <div class="day-title">Mt. Fuji day tour · Breakfast + Dinner</div>
+      <div class="day-location">📍 Pickup 7:50am — return 6:10pm</div>
+    </div>
+    <div class="day-stamp">07</div>
+  </div>
+  <div class="day-note">7:50am pickup. No time for sit-down breakfast. Lunch included in tour — email the operator to request a vegan meal (no meat, fish, egg, or dairy) for one guest. Note: with broth now acceptable this is an easier request to accommodate than full vegan.</div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-b">Breakfast (conbini only — 7:50am pickup)</span></div>
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">Conbini — stock the night before <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Only realistic option before a 7:50am pickup. Stock 7-Eleven the night before. Onigiri, sandwiches, canned coffee.</div>
+      <div class="vline vl-yes">🌱 ok — vegetable and umeboshi onigiri, plain rice, edamame, soy milk. Best guaranteed vegan breakfast on this schedule.</div>
+    </div></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-covered">Lunch</span><span class="meal-label-text">Included in Fuji tour. Vegan person: email the tour operator in advance. Request a meal with no meat, fish, egg, or dairy — note that dashi and bone broth in cooking are acceptable.</span></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-d">Dinner — recovery</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">Ichiran Shibuya <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Individual booths, open until midnight. Fully customizable spice to zero. English ordering forms. Perfect recovery dinner — nobody has to talk after a mountain day.</div>
+      <div class="vline vl-yes">🌱 ok — Ichiran's tonkotsu broth is pork bone based (fine now). On the English ordering form, mark: no chashu, no egg, no butter. Request plain noodles in broth with any vegetable toppings. One of the best vegan-friendly ramen experiences in Japan for someone with these restrictions.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Soushi Menya Musashi — Shinjuku</div>
+      <div class="opt-desc">Outstanding tsukemen in Shinjuku. If back from Fuji by 6pm, beat the dinner rush.</div>
+      <div class="vline vl-risk">⚠ ask — pork/chicken dipping broth now fine. No chashu, no egg. Plain noodles and broth. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Bikkuri Donkey — Shinjuku <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Open until 5am, seats groups. Reliable for a very tired group. No queue usually late at night.</div>
+      <div class="vline vl-risk">⚠ ask — vegetable side salad, plain rice. Show custom card. Hamburg is meat but sides are accessible.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Ramen Hayashida — Shinjuku <span class="badge b-cash">cash only</span> <span class="badge b-warn">Japanese machine</span></div>
+      <div class="opt-desc">Outstanding ramen quality in Shinjuku. Worth the friction of the ordering machine for the quality after a hard day.</div>
+      <div class="vline vl-risk">⚠ ask — broth fine. No meat, no egg. Use Google Translate on the machine. Show custom card to staff for toppings clarification.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Sugoi Niboshi Rāmen Nagi — Golden Gai</div>
+      <div class="opt-desc">Late-night sardine-broth ramen in Shinjuku Golden Gai. Open very late. Small seating — may need two sittings for 6.</div>
+      <div class="vline vl-yes">🌱 ok — niboshi (sardine) broth now fine. No chashu, no egg. Plain broth and noodles with vegetable toppings.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Kirimugiya Jinroku — Shinjuku</div>
+      <div class="opt-desc">Michelin-rated udon and tempura. Long waits but genuinely excellent. If back early enough from Fuji to beat the queue.</div>
+      <div class="vline vl-yes">🌱 ok — plain udon with dashi broth (fine). Vegetable tempura. Show custom card. One of the better vegan-compatible meals in Shinjuku.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Soba Kamonosuke — Shinjuku</div>
+      <div class="opt-desc">Soba in Shinjuku. Lighter and easier than ramen for a tired body after Fuji climbing.</div>
+      <div class="vline vl-yes">🌱 ok — buckwheat soba with dashi dipping sauce (fine). Cold zaru soba. Light and easy recovery meal.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Conbini + hotel rest <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">If genuinely exhausted after Fuji, there is no shame in a conbini dinner and early sleep. This is a legitimate choice.</div>
+      <div class="vline vl-yes">🌱 ok — edamame, vegetable onigiri, miso soup cup (dashi fine), plain rice. Good rest is more important than a memorable dinner on this particular night.</div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ═══ NAGOYA ═══ -->
+<div class="city-divider"><span class="city-label">🏯 Nagoya — Oct 18–19</span></div>
+
+<!-- OCT 18 -->
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-meta">
+      <div class="day-label">Sun Oct 18</div>
+      <div class="day-title">Tokyo → Toyota Museum → Nagoya · Dinner</div>
+      <div class="day-location">📍 Transit day — arriving Nagoya evening</div>
+    </div>
+    <div class="day-stamp">08</div>
+  </div>
+  <div class="day-note">Nothing from your saved list is near the Toyota Museum. Eat at the museum and move on. Nagoya food scene is meat and fish heavy but with broth now fine, the vegan person has significantly more options in ramen and noodle shops here.</div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-b">Breakfast (Tokyo, fast)</span></div>
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">Conbini near Tokyo hotel <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Early departure, keep it fast. Save Komeda's for Nagoya.</div>
+      <div class="vline vl-yes">🌱 ok — same as previous days. Stock the night before.</div>
+    </div></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-l">Lunch</span><span class="meal-label-text">Toyota Museum café or nearby. Nothing from saved list is in Nagakute. Vegan person: museum cafés typically have a vegetable set meal. Confirm at the venue on arrival.</span></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-d">Dinner — Nagoya</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">Sumiyaki Unafuji — Nagoya <span class="badge b-res">reserve now</span></div>
+      <div class="opt-desc">Hitsumabushi grilled eel. Reservation removes turnaway risk. No raw fish, not spicy. Correct Nagoya experience. 💰💰💰</div>
+      <div class="vline vl-no">✗ no — eel is the entire dish and there is no plant-based substitute here. When reserving, ask if a vegetable rice dish (plain gohan with tsukemono pickles) can be prepared for one guest. Pickles are typically vegan. Vegan person may need to supplement with conbini after dinner.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Yakiuo Ishikawa Nagoya <span class="badge b-warn">small portions</span></div>
+      <div class="opt-desc">Grilled fish tasting experience — unique and local. Order generously for the group. No raw fish, not spicy.</div>
+      <div class="vline vl-no">✗ no — fish is the focus. Same solution as above: vegan person asks for plain rice and pickles or supplements separately.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Marugen Ramen — Nagoya <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Nagoya morning ramen — also good for dinner. Open until 1am. Accessible and reliable.</div>
+      <div class="vline vl-risk">⚠ ask — Nagoya-style ramen often uses chicken or pork broth (fine). Order no meat, no egg. Plain broth and noodles with whatever vegetable toppings are available. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Iwasho — Nagoya <span class="badge b-cash">cash</span></div>
+      <div class="opt-desc">Budget-friendly local Nagoya spot (💰). Good fallback if the premium options don't work.</div>
+      <div class="vline vl-risk">⚠ ask — local Japanese. Show custom card. Ask about tofu, vegetable, or plain rice dishes without meat, egg, or dairy.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Komeda's Coffee — Nagoya (dinner-as-café) <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Open late, comfortable seating. If dinner falls through or you arrive in Nagoya very late, Komeda's serves light meals beyond breakfast.</div>
+      <div class="vline vl-risk">⚠ ask — plain toast without butter, vegetable sandwiches without egg or dairy filling. Show custom card and ask what's available. Komeda's is a chain so staff are accustomed to special requests.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Nagoya Station food hall <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Nagoya Station is large with extensive food options across floors. If arriving directly at the station and too tired to explore the city, eat here.</div>
+      <div class="vline vl-risk">⚠ ask — large variety improves chances of finding vegan-compatible dishes. Look for the udon/soba counters (broth fine, order no meat, no egg). Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Nagoya Sakae International Cuisine <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Sakae entertainment district has Indian, Thai, and Italian restaurants that are more naturally accommodating of vegan-style requests. Good if the group wants guaranteed vegan options for one member without hassle.</div>
+      <div class="vline vl-yes">🌱 ok — Indian dal or vegetable curry, Thai vegetable stir-fry, Italian pasta with tomato sauce are all naturally vegan. These cuisines don't rely on hidden egg/dairy in the way Japanese food does.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Conbini near Nagoya hotel <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">If arriving very late in Nagoya and Unafuji is past its service time, conbini is the honest fallback. Save energy for tomorrow.</div>
+      <div class="vline vl-yes">🌱 ok — same items as throughout the trip. Label check everything.</div>
+    </div></div>
+  </div>
+</div>
+
+<!-- OCT 19 -->
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-meta">
+      <div class="day-label">Mon Oct 19</div>
+      <div class="day-title">Nagoya → Osaka Dotonbori</div>
+      <div class="day-location">📍 Nagoya morning / Osaka evening</div>
+    </div>
+    <div class="day-stamp">09</div>
+  </div>
+  <div class="day-note">Dotonbori crawl IS dinner — don't plan a separate restaurant. With broth now acceptable, the vegan person has meaningfully more access to the crawl than before.</div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-b">Breakfast — Nagoya</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">Komeda's Coffee — Nagoya <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">The Nagoya morning ritual — toast and boiled egg for the price of coffee. Multiple locations, chain ensures consistency for a group of 6.</div>
+      <div class="vline vl-risk">⚠ ask — the egg in the morning set is not vegan. Ask for plain toast with jam and no butter. The boiled egg can be given to another group member. Show custom card for clarity.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Marugen Ramen — Nagoya <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Nagoya-style ramen for breakfast. Different and memorable if you like ramen at any hour.</div>
+      <div class="vline vl-risk">⚠ ask — broth fine, no meat, no egg. Noodles only with broth and vegetable toppings. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Nagoya Station ekiben stall <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Buy a regional bento on the way to the Shinkansen. Eating on the bullet train is a classic Japanese travel experience. Nagoya ekiben feature hitsumabushi and miso katsu.</div>
+      <div class="vline vl-risk">⚠ ask — most ekiben are meat/fish. Look for inari sushi bento (fried tofu pockets with rice) or ask at the counter for a vegetable rice bento. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Conbini near Nagoya hotel <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Fastest if making an early train to Himeji before Osaka. Saves 30–45 minutes on a transit-heavy day.</div>
+      <div class="vline vl-yes">🌱 ok — plain onigiri, edamame, soy milk. Stock from the night before if needed.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Himeji Castle area café (if stopping there)</div>
+      <div class="opt-desc">Tourist-area cafés near Himeji increasingly serve English menus with vegetable set meals. Good lunch option if doing the Himeji stop.</div>
+      <div class="vline vl-risk">⚠ ask — tourist-area cafés more likely to accommodate requests. Show custom card and look for a vegetable rice or noodle set.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Shinkansen onboard food + vending <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">The Shinkansen has a food cart service and vending machines onboard. Good for snacking during the bullet train leg.</div>
+      <div class="vline vl-risk">⚠ ask — look for plain onigiri and edamame from the cart. Avoid sandwiches without knowing the filling. The food cart attendant can show you the item packaging.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Ootoya (chain) near Nagoya Station <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Japanese set-meal chain with multiple Tokyo and Nagoya locations. Affordable, handles groups, quick service.</div>
+      <div class="vline vl-risk">⚠ ask — tofu and vegetable dishes available. Miso soup broth fine. Show custom card and ask for a vegetable set with no meat, no egg, no dairy in the toppings or sauce.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Eat at Osaka Dotonbori on arrival (skip Nagoya breakfast)</div>
+      <div class="opt-desc">If making a very early train, skip a proper Nagoya breakfast and eat at Dotonbori on arrival instead. The crawl provides plenty of options from 3–5pm onward.</div>
+      <div class="vline vl-yes">🌱 ok — Dotonbori has Namba street food including vegetable-based options. The vegan person can eat immediately on arrival while the group settles in.</div>
+    </div></div>
+  </div>
+
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-d">Dinner — Dotonbori crawl (5-min walk between all stops)</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">Primary crawl sequence <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="crawl-steps">
+        <div class="crawl-step"><span class="crawl-num">1.</span><div><span class="crawl-name">Takoyaki Shioya</span> — street takoyaki to kick off. <span class="badge b-vegan-no">✗ contains octopus and egg — vegan person gets plain mochi or roasted corn from a nearby stall</span></div></div>
+        <div class="crawl-step"><span class="crawl-num">2.</span><div><span class="crawl-name">Kushikatsu Ittoku Dotonbori</span> — kushikatsu, open until 1am, tourist area. <span class="badge b-vegan-risk">⚠ ask — vegetable kushikatsu (eggplant, mushroom, lotus root) exist. Batter: confirm no egg with custom card. Dipping sauce is typically soy/Worcestershire — check dairy.</span></div></div>
+        <div class="crawl-step"><span class="crawl-num">3.</span><div><span class="crawl-name">Wagyu Ichiraku Dotonbori</span> — wagyu beef main event. <span class="badge b-vegan-no">✗ wagyu is beef — vegan person has Dotonbori vegetable street food or inari sushi during this stop</span></div></div>
+        <div class="crawl-step"><span class="crawl-num">4.</span><div><span class="crawl-name">CAFE ANNON Namba</span> — pancakes as dessert. <span class="badge b-vegan-no">✗ pancakes use egg and dairy — vegan person gets fruit from a Dotonbori street stall or a plain mochi sweet</span></div></div>
+      </div>
+      <div class="vline vl-risk" style="margin-top:8px">⚠ overall crawl vegan note — with broth now fine, vegetable kushikatsu is the main accessible item. Namba has plenty of supplemental street food. The vegan person should plan to eat alongside the group at kushikatsu and supplement with street food at the wagyu and pancake stops.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Swap Ichiraku → Salmon Kat Namba <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">If Ichiraku has a long wait. Fresh salmon and unagi, open until midnight. Good for the raw-fish-cautious person as unagi is cooked.</div>
+      <div class="vline vl-no">✗ no — salmon and eel. Vegan person eats Namba street food during this stop.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Swap ANNON dessert → Fruit Cafe Hikari フルーツカフェ ひかり</div>
+      <div class="opt-desc">Osaka fruit café in Namba area, open until 9pm. Strong dessert swap.</div>
+      <div class="vline vl-risk">⚠ ask — fresh fruit is vegan. Ask for a fruit plate or fruit-based drink without cream or dairy toppings. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Hanamaruken Hozenji — Osaka <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Classic rich ramen near Hozenji temple in Dotonbori. Open until midnight. Good atmosphere in a narrow laneway setting.</div>
+      <div class="vline vl-risk">⚠ ask — pork broth fine. No chashu, no egg. Plain broth and noodles with vegetable toppings. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">大阪 かに銀 難波店 — Namba</div>
+      <div class="opt-desc">Crab restaurant in Namba. For those in the group who want the Osaka crab experience on arrival night.</div>
+      <div class="vline vl-no">✗ no — crab is the focus. Vegan person eats from Namba street food.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Manpukuya Umeda Higashidori — Osaka (Umeda alternative)</div>
+      <div class="opt-desc">Consistently praised Japanese restaurant near Umeda. If you arrive by Umeda rather than Namba and don't want to travel to Dotonbori right away.</div>
+      <div class="vline vl-risk">⚠ ask — Japanese restaurant. Show custom card. Ask for tofu or vegetable dishes without meat, egg, or dairy.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Gyozaclub Rocklee — Osaka <span class="badge b-warn">mixed foreigner reviews</span></div>
+      <div class="opt-desc">Dumplings and Chinese izakaya dishes in Osaka. Good variety and fun vibes. Cover charge applies. Smoking inside.</div>
+      <div class="vline vl-risk">⚠ ask — vegetable gyoza exist but filling may contain egg-based binders. Show custom card and ask specifically about the filling ingredients. Vegetable stir-fry dishes may be available without meat.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">元祖豚丼屋TONTON — Osaka (pork rice bowl, late-night)</div>
+      <div class="opt-desc">Open until 11pm. Good late fallback if the crawl ends early and people are still hungry.</div>
+      <div class="vline vl-risk">⚠ ask — pork rice bowl is the focus. Ask if a plain rice with pickles (tsukemono) can be prepared for one guest. Pickles are typically vegan. Broth-based sides would also be fine.</div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ═══ OSAKA ═══ -->
+<div class="city-divider"><span class="city-label">🦀 Osaka — Oct 20–23</span></div>
+
+<!-- OCT 20-21 -->
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-meta">
+      <div class="day-label">Tue–Wed Oct 20–21</div>
+      <div class="day-title">Universal Studios Japan · Breakfast only</div>
+      <div class="day-location">📍 Near Osaka hotel, early morning</div>
+    </div>
+    <div class="day-stamp">10</div>
+  </div>
+  <div class="day-note">All lunch and dinner inside USJ. Check USJ allergen page before the trip and pre-identify plant-based options. With broth now acceptable, many Japanese park dishes are accessible by removing meat/egg toppings. Butterbeer at Wizarding World: the non-dairy version exists but check availability at the park.</div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-b">Breakfast</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">Onigiri Gorichan — Osaka <span class="badge b-cash">cash only</span> <span class="badge b-warn">long queue</span></div>
+      <div class="opt-desc">Exceptional fresh onigiri, opens 7am. Send one person ahead while others get ready. USJ is ~20 min from central Osaka.</div>
+      <div class="vline vl-yes">🌱 ok — umeboshi, konbu, vegetable fillings. Show custom card. Best pre-park breakfast option for the vegan person in Osaka.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Yaoya-to-Gohan Uraya Ookura — Osaka</div>
+      <div class="opt-desc">Vegetable-focused Japanese cuisine. Opens 11am — only for a very late USJ entry. Heartfelt wholesome cooking.</div>
+      <div class="vline vl-yes">🌱 strong — vegetable-focused restaurant. Show custom card. Many dishes naturally compatible. Best vegan-friendly sit-down breakfast in Osaka from your saved list.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Bread, Espresso and Sakaisuji Club — Osaka <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Opens 8am. Bakery café with reliable group seating. Good fallback if Gorichan queue is over 30 minutes.</div>
+      <div class="vline vl-risk">⚠ ask — plain bread without butter or egg. Show custom card. Some breads are naturally vegan.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Goody Nakatsu — Osaka <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Quick and fresh, open until midnight so also a late-night option after USJ. Foreigner and group friendly with no pretension.</div>
+      <div class="vline vl-risk">⚠ ask — fresh produce focus. Show custom card and ask about vegetable dishes without egg or dairy. More likely to accommodate than a traditional Japanese restaurant.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Ebisuchan — Osaka</div>
+      <div class="opt-desc">Japanese restaurant in Osaka, opens 5pm — brunch/late breakfast if doing a later USJ entry. From your saved list.</div>
+      <div class="vline vl-risk">⚠ ask — Japanese. Show custom card. Rice, miso soup, and vegetable dishes available. Miso soup broth fine.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Izakaya almalio — Osaka <span class="badge b-warn">no English menu</span></div>
+      <div class="opt-desc">Friendly owner and great food. No English menu — bring Google Translate. Open until 2am so also a late-night option after USJ days.</div>
+      <div class="vline vl-risk">⚠ ask — friendly owner noted in reviews. Show custom card — personal service makes accommodation more likely. Edamame, plain rice, pickled vegetables, and agedashi tofu (broth fine) likely available.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Shinsekai Kushikatsu Ittoku — Shinsekai (slight detour)</div>
+      <div class="opt-desc">If routing through Shinsekai before USJ. Earlier in the day than the dinner slot. Grab kushikatsu as a breakfast-snack hybrid.</div>
+      <div class="vline vl-risk">⚠ ask — vegetable kushikatsu available. Show custom card about the batter and dipping sauce. Same approach as the Dotonbori crawl.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Conbini near hotel <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Fastest for an early USJ departure. Reliable guaranteed option for every member of the group.</div>
+      <div class="vline vl-yes">🌱 ok — same items as throughout the trip. Soy milk, vegetable onigiri, edamame. Best early-morning vegan breakfast.</div>
+    </div></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-covered">Lunch + Dinner</span><span class="meal-label-text">Park food inside USJ. Vegan person: check USJ allergen page before the trip. With broth now fine, look for udon/noodle stalls and request no meat, no egg toppings.</span></div>
+  </div>
+</div>
+
+<!-- OCT 22 -->
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-meta">
+      <div class="day-label">Thu Oct 22</div>
+      <div class="day-title">Cup Noodles Museum → Solaniwa Onsen → Shinsekai</div>
+      <div class="day-location">📍 Ikeda → Konohana → Shinsekai/Shinsaibashi</div>
+    </div>
+    <div class="day-stamp">11</div>
+  </div>
+  <div class="day-note">Museum lunch is the cup noodle experience. Onsen has food on-site. Dinner in Shinsaibashi. Vegan note on the noodle museum: instant noodle flavor packets contain meat/fish-derived flavoring — the vegan person can make the noodles but may want to eat them plain or bring their own soy sauce packet.</div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-b">Breakfast</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">Bread, Espresso and Sakaisuji Club — Osaka <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Opens 8am. Near Sakaisuji line heading north to Ikeda. Light and fast for a day with many moving parts.</div>
+      <div class="vline vl-risk">⚠ ask — plain bread without butter or egg. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Onigiri Gorichan — Osaka <span class="badge b-cash">cash only</span></div>
+      <div class="opt-desc">Opens 7am. If skipped on USJ mornings, use it here. Take onigiri on the train to Ikeda.</div>
+      <div class="vline vl-yes">🌱 ok — vegetable and umeboshi fillings. Best vegan breakfast in Osaka from your list.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Yaoya-to-Gohan Uraya Ookura — Osaka</div>
+      <div class="opt-desc">Vegetable-focused Japanese. Opens 11am — use for a late breakfast on a slower morning.</div>
+      <div class="vline vl-yes">🌱 strong — same as Oct 20-21 note. Best sit-down vegan breakfast option in Osaka.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">grenier Kitahama branch <span class="badge b-warn">opens 10am, takeout only</span></div>
+      <div class="opt-desc">Hidden French bakery near Kitahama station, exceptional mille-feuille. Works if starting late.</div>
+      <div class="vline vl-risk">⚠ ask — mille-feuille uses dairy. Ask what breads are made without butter or egg. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Goody Nakatsu — Osaka <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Quick and fresh. Reliable group breakfast option if Gorichan queue is too long.</div>
+      <div class="vline vl-risk">⚠ ask — fresh produce focus. Show custom card. More likely to accommodate than traditional Japanese.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Takatori Umeda-doyama — Osaka (Umeda area)</div>
+      <div class="opt-desc">Japanese restaurant in Umeda. Opens 6pm — only if using it as a late-day option. More relevant as a dinner reference.</div>
+      <div class="vline vl-risk">⚠ ask — Japanese. Show custom card. Vegetable dishes available in most izakaya-style Japanese restaurants.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Tenjinzushi — Osaka</div>
+      <div class="opt-desc">Sushi in Osaka. Opens noon — late breakfast/lunch. Good quality and accessible.</div>
+      <div class="vline vl-yes">🌱 ok — cucumber roll, avocado, inari. Show custom card to sushi chef. Same approach as Tokyo sushi experiences throughout the trip.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Conbini near hotel <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Fastest for an early museum departure. Reliable guaranteed option.</div>
+      <div class="vline vl-yes">🌱 ok — same as throughout the trip.</div>
+    </div></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-l">Lunch (activity)</span><span class="meal-label-text">Cup Noodles Museum — $5 custom noodle experience. Vegan person: make the noodles normally but eat them plain or with soy sauce (bring a pocket packet). The experience itself is the point.</span></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-s">Snack</span><span class="meal-label-text">Solaniwa Onsen — food on-site. Vegan person: edamame, plain rice, pickled vegetables, miso soup (broth fine). Show custom card to onsen food staff.</span></div>
+  </div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-d">Dinner — Shinsaibashi area</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">YAKINIKU KAPPOU YPRYU Soemoncho <span class="badge b-res">reserve now</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Luxurious wagyu yakiniku. Reservation removes foreigner-turnaway risk. Tableside cooked, not spicy, no raw fish. Opens 5pm — book first seating after onsen. Osaka splurge (💰💰💰).</div>
+      <div class="vline vl-risk">⚠ mention when reserving — yakiniku is meat-focused but upscale restaurants can grill vegetables and tofu on the same griddle. When reserving, explicitly ask: can one guest receive a vegetable and tofu grilling set without meat? Request no butter or dairy-based marinades on the vegetables. High-end restaurants accommodate this with advance notice.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Teppan Mahoroba Shinsaibashi <span class="badge b-res">reserve as backup</span></div>
+      <div class="opt-desc">Same Shinsaibashi neighborhood. Unforgettable wagyu teppan. Reserve both this and YPRYU — cancel one you don't use.</div>
+      <div class="vline vl-risk">⚠ ask when reserving — teppan can cook vegetables and tofu effectively. Request a vegetable teppan plate for one guest with no butter. Same approach as MATENROU at Skytree.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Shinsekai Kushikatsu Ittoku — Shinsekai <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Kushikatsu in tourist-friendly Shinsekai. Open until 1am, no reservation needed. Lower price point — good if the day's spending has been heavy.</div>
+      <div class="vline vl-risk">⚠ ask — vegetable kushikatsu available. Show custom card and ask about the batter and dipping sauce. Eggplant, mushroom, and lotus root skewers are the main options for the vegan person.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">WAGYU SUKIYAKI 極〜GOKU〜 Shinsaibashi Dotonbori — Osaka</div>
+      <div class="opt-desc">Second GOKU location in Osaka. If the Harajuku one in Tokyo was excellent, revisit the format here.</div>
+      <div class="vline vl-risk">⚠ mention when reserving — same approach as Tokyo location. Ask for tofu sukiyaki in the group's broth for one guest. Sukiyaki broth (soy, mirin, dashi) is all fine. No meat, no egg.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Unagi Kushiyaki Izumo — Osaka <span class="badge b-warn">cover charge, can be loud</span></div>
+      <div class="opt-desc">Huge portions of unagi and meat bowls. Great atmosphere. Cover charge and mandatory tipping noted in reviews.</div>
+      <div class="vline vl-no">✗ no — eel and meat are the focus. Vegan person gets plain rice and pickles or a vegetable side. Not ideal for them but the rest of the group eats well here.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Tonkatsu New Babe Tanimachi — Osaka <span class="badge b-res">recommended to reserve</span></div>
+      <div class="opt-desc">Exceptional juicy tonkatsu. Often crowded. Good for the group if wagyu options fall through.</div>
+      <div class="vline vl-no">✗ no — tonkatsu is pork cutlet. Vegan person gets plain rice, miso soup (broth fine), and cabbage salad (check for dairy dressing). Not their best meal but manageable.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Hormone Yakiniku Ogawa Shoten Tengo — Osaka <span class="badge b-warn">open until 3am</span></div>
+      <div class="opt-desc">Yakiniku with tasty salads and sauces. Open very late — good if dinner starts late after a long onsen evening.</div>
+      <div class="vline vl-risk">⚠ ask — yakiniku is meat-focused but salads, edamame, and grilled vegetable sides exist. Show custom card. Ask for a vegetable grilling plate. Open until 3am so timing is very flexible.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">Hanamaruken Hozenji — Osaka <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Classic rich ramen near Hozenji temple — in the Dotonbori area you'll pass through. Open until midnight. Good atmosphere.</div>
+      <div class="vline vl-risk">⚠ ask — pork broth fine. No chashu, no egg. Plain noodles and broth with vegetable toppings. Show custom card. Good accessible dinner option if everything else fails.</div>
+    </div></div>
+  </div>
+</div>
+
+<!-- OCT 23 -->
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-meta">
+      <div class="day-label">Fri Oct 23</div>
+      <div class="day-title">Fly out — Kansai or Itami Airport · Breakfast</div>
+      <div class="day-location">📍 Osaka → airport</div>
+    </div>
+    <div class="day-stamp">12</div>
+  </div>
+  <div class="day-note">Departure day. grenier opens 10am — only for afternoon flights. With broth now acceptable, most airport food options have something suitable for the vegan person by ordering around meat, egg, and dairy.</div>
+  <div class="meal-section">
+    <div class="meal-header"><span class="meal-type mt-b">Breakfast</span></div>
+
+    <div class="option"><span class="opt-rank p">1</span><div class="opt-body">
+      <div class="opt-name">grenier Kitahama branch <span class="badge b-warn">opens 10am — afternoon flights only</span></div>
+      <div class="opt-desc">Hidden French bakery, exceptional mille-feuille. Takeout only. Perfect last Osaka memory for an afternoon flight.</div>
+      <div class="vline vl-risk">⚠ ask — mille-feuille uses dairy cream. Ask about plain bread options without butter or egg. Show custom card for a final Japan food experience.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">2</span><div class="opt-body">
+      <div class="opt-name">Onigiri Gorichan — Osaka <span class="badge b-cash">cash only</span></div>
+      <div class="opt-desc">Opens 9am. Last chance for exceptional fresh onigiri. Take on the train to the airport.</div>
+      <div class="vline vl-yes">🌱 ok — best last vegan breakfast option in Osaka. Vegetable and umeboshi fillings.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">3</span><div class="opt-body">
+      <div class="opt-name">Yaoya-to-Gohan Uraya Ookura — Osaka</div>
+      <div class="opt-desc">Vegetable-focused Japanese. Opens 11am — only if you have an afternoon flight and time to sit.</div>
+      <div class="vline vl-yes">🌱 strong — best vegan sit-down farewell breakfast in Osaka if timing allows.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">4</span><div class="opt-body">
+      <div class="opt-name">Bread, Espresso and Sakaisuji Club <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Opens 8am. Reliable group breakfast on the way to the airport train. Consistent and efficient.</div>
+      <div class="vline vl-risk">⚠ ask — plain bread without butter or egg. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">5</span><div class="opt-body">
+      <div class="opt-name">Conbini near hotel <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">Most reliable for any flight time, including early morning departures. Stock the night before if leaving before 8am.</div>
+      <div class="vline vl-yes">🌱 ok — same as throughout the trip. Reliable guaranteed option for last morning.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">6</span><div class="opt-body">
+      <div class="opt-name">Namba Station food hall before airport train <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Wide variety before boarding the Nankai Line to Kansai Airport. More options than the airport itself and less rushed.</div>
+      <div class="vline vl-risk">⚠ ask — inari sushi and plain rice stalls are typically vegan. Udon/soba counters work with broth-fine restriction and no meat/egg. Show custom card.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">7</span><div class="opt-body">
+      <div class="opt-name">Kansai Airport terminal restaurants <span class="badge b-fr">foreigner-friendly</span> <span class="badge b-group">seats 5+</span></div>
+      <div class="opt-desc">Kansai Airport has a strong food hall. Ramen, tonkatsu, sushi, and international options both before and after security.</div>
+      <div class="vline vl-risk">⚠ ask — udon and soba counters in the airport work. Broth is fine. Request no meat, no egg. Look for the vegetable tempura soba set. Show custom card to counter staff.</div>
+    </div></div>
+
+    <div class="option"><span class="opt-rank">8</span><div class="opt-body">
+      <div class="opt-name">In-flight meal — request VGML when booking <span class="badge b-fr">foreigner-friendly</span></div>
+      <div class="opt-desc">If pressed for time or truly not hungry on departure morning — rely on the in-flight meal. Request the VGML (vegan meal code) when booking flights. Most long-haul carriers accommodate this.</div>
+      <div class="vline vl-yes">🌱 ok — VGML meals are fully plant-based. Book this now if you haven't. Most reliable guaranteed vegan option for departure day regardless of flight timing.</div>
+    </div></div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  Japan Trip · Oct 2025 · 6 people (1 plant-based, dashi/broth/lard ok) · Built from Curo saved list &amp; Wanderlog itinerary · Carry a custom Japanese dining card — standard vegan cards over-restrict for this group member
+</div>
+
+</body>
+</html>
